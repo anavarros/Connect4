@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
         <javafx.version>17.0.1</javafx.version>
-        <main.class>com.aetxabao.connect4.Main</main.class>
+        <main.class>com.anavarros.connect4.Main</main.class>
     </properties>
 
     <dependencies>

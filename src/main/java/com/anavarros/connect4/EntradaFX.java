@@ -1,11 +1,11 @@
-package com.aetxabao.connect4;
+package com.anavarros.connect4;
 
 import javafx.event.Event;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-import static com.aetxabao.connect4.SalidaFX.*;
+import static com.anavarros.connect4.SalidaFX.*;
 
 public class EntradaFX {
 

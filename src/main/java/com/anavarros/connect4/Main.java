@@ -1,4 +1,4 @@
-package com.aetxabao.connect4;
+package com.anavarros.connect4;
 
 /*
 mvn package

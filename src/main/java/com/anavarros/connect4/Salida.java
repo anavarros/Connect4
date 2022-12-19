@@ -1,6 +1,8 @@
-package com.aetxabao.connect4;
+package com.anavarros.connect4;
 
-import static com.aetxabao.connect4.Tablero.*;
+import java.nio.charset.MalformedInputException;
+
+import static com.anavarros.connect4.Tablero.*;
 
 /**
  * @author Nombre Apellido
@@ -43,8 +45,14 @@ public class Salida {
         System.out.println("                                   ");
         char[] letras = {'A','B','C','D','E','F'};
 
+        for (int i = 0; i < letras.length; i++) {
 
-
+            System.out.print(letras[i]);
+            for (int j = 0; j < h; j++) {
+                System.out.print("  |" + matriz[j][i]);
+            }
+            System.out.println();
+        }
 
 
 

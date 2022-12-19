@@ -1,11 +1,9 @@
-package com.aetxabao.connect4;
+package com.anavarros.connect4;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-
-import static com.aetxabao.connect4.Tablero.*;
 
 public class SalidaFX {
 
@@ -55,9 +53,9 @@ public class SalidaFX {
 
     public static void pintaGana(GraphicsContext gc, char[][] matriz, char jugador) {
         limpiaPantalla(gc);
-        if (jugador == O){
+        if (jugador == Tablero.O){
             pintaEncabezado(gc, Color.RED);
-        } else if (jugador == X){
+        } else if (jugador == Tablero.X){
             pintaEncabezado(gc, Color.YELLOW);
         }
         pintaTablero(gc);
@@ -124,10 +122,10 @@ public class SalidaFX {
         char[][] m = invertir(matriz);
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
-                if (m[i][j] == O){
+                if (m[i][j] == Tablero.O){
                     gc.setFill( Color.RED );
                     gc.fillOval(AX+7+j*W, AY+HEIGHT-W+7-i*W,V,V);
-                } else if (m[i][j] == X){
+                } else if (m[i][j] == Tablero.X){
                     gc.setFill( Color.YELLOW );
                     gc.fillOval(AX+7+j*W, AY+HEIGHT-W+7-i*W,V,V);
                 }
@@ -162,10 +160,10 @@ public class SalidaFX {
     }
 
     private static void pintaTurno(GraphicsContext gc, char turno) {
-        if (turno == O){
+        if (turno == Tablero.O){
             gc.setFill( Color.RED );
             gc.fillOval(AX+7+3*W, 10*W-W/2,V,V);
-        } else if (turno == X){
+        } else if (turno == Tablero.X){
             gc.setFill( Color.YELLOW );
             gc.fillOval(AX+7+3*W, 10*W-W/2,V,V);
         }
