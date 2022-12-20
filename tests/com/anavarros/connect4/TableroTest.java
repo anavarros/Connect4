@@ -1,6 +1,6 @@
-package com.aetxabao.connect4;
+package com.anavarros.connect4;
 
-import static com.aetxabao.connect4.Tablero.*;
+import static com.anavarros.connect4.Tablero.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;

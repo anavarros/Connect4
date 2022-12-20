@@ -1,5 +1,7 @@
 package com.anavarros.connect4;
 
+import java.util.Random;
+
 /**
  * @author Nombre Apellido
  */
@@ -31,10 +33,36 @@ public class Tablero {
 
     public Tablero(char[][] m) {
         //TODO: Tablero(m)
-        contador = 0;
-        turno = X;
-        ancho = 0;
-        alto = 0;
+        int cntO = 0;
+        int cntX = 0;
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                if (m[j].equals(O)) {
+                    cntO++;
+                } else if (m[j].equals(X)) {
+                    cntX++;
+                } else {
+                    cntX += 0;
+                    cntO += 0;
+                }
+            }
+            if (m[i].equals(O)) {
+                cntO++;
+            } else if (m[i].equals(X)) {
+                cntX++;
+            } else {
+                cntX += 0;
+                cntO += 0;
+            }
+        }
+        contador = cntX + cntO;
+        if (cntX > cntO){
+            turno = O;
+        } else {
+            turno = X;
+        }
+        ancho = W;
+        alto = H;
         this.m = m;
     }
 
@@ -59,21 +87,47 @@ public class Tablero {
     }
 
     public void iniciaTurno() {
-        //TODO: iniciaTurno
+        Random rnd = new Random();
+        int num = rnd.nextInt(2);
+        if (num == 0) {
+            turno = O;
+        } else if (num == 1){
+            turno = X;
+        }
     }
 
     public void cambiaTurno() {
-        //TODO: cambiaTurno
+        if (turno == X) {
+            turno = O;
+        } else if (turno == O) {
+            turno = X;
+        }
     }
 
     public boolean estaColumnaLibre(int columna) {
         //TODO: estaColumnaLibre
-        return false;
+        int esCierto = 0;
+        if (columna >= 0 || columna < m.length - 1) {
+            return false;
+        }
+        for (int i = 0; i < m[0].length - 1; i++) {
+            if (m[i].equals(L)) {
+                 esCierto = 1;
+            }
+        }
+        if (esCierto == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void inserta(char ficha, int columna) {
         //TODO: insertar
-    }
+        estaColumnaLibre(columna);
+        m[W][H] = ficha;
+        contador++;
+     }
 
     public boolean estaLleno() {
         //TODO: estaLleno
