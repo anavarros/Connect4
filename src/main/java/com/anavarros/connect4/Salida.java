@@ -5,7 +5,7 @@ import java.nio.charset.MalformedInputException;
 import static com.anavarros.connect4.Tablero.*;
 
 /**
- * @author Nombre Apellido
+ * @author Alberto Navarro
  */
 public class Salida {
 
@@ -47,15 +47,16 @@ public class Salida {
         for (int i = h; i > 0; i--) {
             String s = "";
             for (int j = 0;j < w; j++) {
-                s += "  |" + matriz[j][i-1];
+                s += String.format("%2c%2s", matriz[j][i-1],"|");
             }
-            System.out.println(letras[cont] + s + "  |  " + letras[cont]);
+            System.out.println(letras[cont] + "  |" + s +  "  " + letras[cont]);
             cont--;
         }
         System.out.println("   -----------------------------   ");
         System.out.println("   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |   ");
         System.out.println("                                   ");
     }
+
 
     public static void pintaGana(char[][] m, char jugador) {
         pinta(m);
